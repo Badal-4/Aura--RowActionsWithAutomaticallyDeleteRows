@@ -1,0 +1,14 @@
+public class ContactUtilities
+{
+    @AuraEnabled
+    public static List<Account> getAccountData()
+    {
+        return [Select Id,Name,AccountNumber,Industry,Phone from Account Limit 20];
+    }
+    
+    @AuraEnabled
+    public static void delAccount(Account accountRec)
+    {
+        delete accountRec;
+    }
+}
